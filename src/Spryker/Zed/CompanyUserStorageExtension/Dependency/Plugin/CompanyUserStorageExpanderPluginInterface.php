@@ -8,15 +8,23 @@
 namespace Spryker\Zed\CompanyUserStorageExtension\Dependency\Plugin;
 
 use Generated\Shared\Transfer\CompanyUserStorageTransfer;
+use Generated\Shared\Transfer\CompanyUserTransfer;
 
 interface CompanyUserStorageExpanderPluginInterface
 {
     /**
+     * Specification:
+     *  - Expands CompanyUserStorageTransfer with additional data.
+     *
      * @api
      *
+     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
      * @param \Generated\Shared\Transfer\CompanyUserStorageTransfer $companyUserStorageTransfer
      *
      * @return \Generated\Shared\Transfer\CompanyUserStorageTransfer
      */
-    public function expand(CompanyUserStorageTransfer $companyUserStorageTransfer): CompanyUserStorageTransfer;
+    public function expand(
+        CompanyUserTransfer $companyUserTransfer,
+        CompanyUserStorageTransfer $companyUserStorageTransfer
+    ): CompanyUserStorageTransfer;
 }
